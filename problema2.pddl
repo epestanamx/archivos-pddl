@@ -1,0 +1,28 @@
+(define (problem mundo2)
+    (:domain ambulancia)
+    (:objects
+        localizacion1 localizacion2 localizacion3 localizacion4 ambulancia1 ambulancia2 paciente1 paciente2 hospital
+    )
+    (:init
+        (Hospital localizacion1)
+        (Ambulancia ambulancia1)
+        (Ambulancia ambulancia2)
+        (Localizacion localizacion1 localizacion2)
+        (Localizacion localizacion2 localizacion4)
+        (Localizacion localizacion4 localizacion3)
+        (Localizacion localizacion3 localizacion4)
+        (Localizacion localizacion4 localizacion2)
+        (Localizacion localizacion2 localizacion1)
+        (Paciente paciente1)
+        (Paciente paciente2)
+        (Libre ambulancia1)
+        (Libre ambulancia2)
+        (at-ambulancia ambulancia1 localizacion1)
+        (at-ambulancia ambulancia2 localizacion1)
+        (at-paciente paciente1 localizacion4)
+        (at-paciente paciente2 localizacion3)
+    )
+    (:goal
+        (and (at-paciente paciente1 localizacion1) (at-paciente paciente2 localizacion1))
+    )
+)
